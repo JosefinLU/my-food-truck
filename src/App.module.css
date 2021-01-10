@@ -1,0 +1,17 @@
+body {
+  background-color: rgb(188, 224, 223);
+}
+
+h1 {
+  text-align: center;
+}
+
+.button-array {
+  text-align: center;
+  color: aquamarine;
+}
+
+.Applogotruck {
+  width: 1500;
+  height: 1000;
+}
