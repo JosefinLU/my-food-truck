@@ -1,11 +1,16 @@
 //import logo from "./logo.svg";
 //import styles from "./App.module.css";
 import React, { Component } from "react";
-import foodTruckImage from "./Images/food-truck-img.jpg";
+import TruckCell from "./Components/trucks/TruckCell";
+import Truck from "./Models/Truck";
 //import React from "react";
 
-// created a variable for the array
-const listOfTrucks = ["Truck 1", "Truck 2", "Truck 3"];
+// created a objects for the array
+const listOfTrucks = [
+  new Truck("Bastard Burgers", "Slussen", "American"),
+  new Truck("La Neta", "Götgatan", "Mexican"),
+  new Truck("Moshi Moshi", "Strandvägen", "Japanese"),
+];
 
 class App extends Component {
   constructor(props) {
@@ -33,23 +38,17 @@ class App extends Component {
     return (
       <div>
         <h1>Josefin's Food Truck Finder</h1>
-        <ul>
-          {this.state.listOfTrucks.map((item) => (
-            <li key={item}>{item}</li>
+        <div>
+          {this.state.listOfTrucks.map((aTruck) => (
+            <TruckCell truck={aTruck} />
           ))}
-        </ul>
+        </div>
         <button type="button" onClick={this.onClearArray}>
           Clear Array
         </button>
         <button type="button" onClick={this.onResetArray}>
           Reset Array of Food Trucks
         </button>
-        <img
-          src={foodTruckImage}
-          alt="foodTruckImage"
-          width="1500"
-          height="1000"
-        />
       </div>
     );
   }
