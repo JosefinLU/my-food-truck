@@ -1,0 +1,13 @@
+.imgfoodtruck {
+  width: 370px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.container {
+  margin: 50px 0;
+}
+
+.card {
+  margin: 0 2% !important;
+}

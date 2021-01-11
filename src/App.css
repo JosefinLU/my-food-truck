@@ -4,14 +4,15 @@ body {
 
 h1 {
   text-align: center;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+Button {
+  color: blueviolet;
 }
 
 .button-array {
   text-align: center;
   color: aquamarine;
-}
-
-.Applogotruck {
-  width: 1500;
-  height: 1000;
 }

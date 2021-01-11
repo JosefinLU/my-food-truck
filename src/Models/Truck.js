@@ -3,10 +3,12 @@
 //add rating and img + css
 
 class Truck {
-  constructor(name, address, typeOfFood) {
+  constructor(name, address, typeOfFood, rating, imgTruck) {
     this.name = name;
     this.address = address;
     this.typeOfFood = typeOfFood;
+    this.rating = rating;
+    this.imgTruck = imgTruck;
   }
 }
 

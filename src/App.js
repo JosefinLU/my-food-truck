@@ -1,15 +1,38 @@
 //import logo from "./logo.svg";
-//import styles from "./App.module.css";
+import styles from "./App.css";
 import React, { Component } from "react";
-import TruckCell from "./Components/trucks/TruckCell";
+//import TruckCell from "./Components/trucks/TruckCell";
 import Truck from "./Models/Truck";
+import Card from "./Components/trucks/Card";
+import { Grid, Button } from "@material-ui/core";
 //import React from "react";
 
-// created a objects for the array
+//Questions:
+// if we want address and rating as heading, where do we put ex address and rating ?
+
+// created an objects for the array
 const listOfTrucks = [
-  new Truck("Bastard Burgers", "Slussen", "American"),
-  new Truck("La Neta", "Götgatan", "Mexican"),
-  new Truck("Moshi Moshi", "Strandvägen", "Japanese"),
+  new Truck(
+    "Bastard Burgers",
+    "Slussen",
+    "American",
+    "Rating: 4.5",
+    "https://img.koket.se/standard-mega/friggin-burger.jpg"
+  ),
+  new Truck(
+    "La Neta",
+    "Götgatan",
+    "Mexican",
+    "Rating: 4.7",
+    "https://static.onecms.io/wp-content/uploads/sites/9/2020/03/19/fideos-secos-tacos-FT-RECIPE0420-1.jpg"
+  ),
+  new Truck(
+    "Moshi Moshi",
+    "Strandvägen",
+    "Japanese",
+    "Rating: 3.8",
+    "https://godream-cdn9.scdn4.secure.raxcdn.com/media/44940/sushi-foer-2-master.jpg?anchor=center&mode=crop&width=1050&height=650&quality=60"
+  ),
 ];
 
 class App extends Component {
@@ -34,21 +57,27 @@ class App extends Component {
   };
 
   // everything here is so in renders in the browser
+  // we passed the array into the Grid Container so it would render as many as the element as in the array
+  // And now truck is added to the card Card truck={aTruck}
   render() {
     return (
       <div>
         <h1>Josefin's Food Truck Finder</h1>
         <div>
-          {this.state.listOfTrucks.map((aTruck) => (
-            <TruckCell truck={aTruck} />
-          ))}
+          <Grid container spacing={4}>
+            {this.state.listOfTrucks.map((aTruck) => (
+              <Grid item xs={12} sm={6} md={4}>
+                <Card truck={aTruck} />
+              </Grid>
+            ))}
+          </Grid>
         </div>
-        <button type="button" onClick={this.onClearArray}>
-          Clear Array
-        </button>
-        <button type="button" onClick={this.onResetArray}>
-          Reset Array of Food Trucks
-        </button>
+        <Button color="primary" onClick={this.onClearArray}>
+          Clear Food Cards
+        </Button>
+        <Button color="secondary" onClick={this.onResetArray}>
+          See Food Cards
+        </Button>
       </div>
     );
   }
